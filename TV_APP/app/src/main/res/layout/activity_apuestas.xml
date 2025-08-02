@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/apuestas_background"
+    android:padding="16dp">
+
+    <!-- Header con información del usuario -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="16dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Usuario: christian"
+            android:textSize="18sp"
+            android:textColor="@android:color/black"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/tv_saldo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Saldo: $1,000"
+            android:textSize="18sp"
+            android:textColor="@android:color/black"
+            android:textStyle="bold"
+            android:layout_marginEnd="16dp"/>
+
+        <Button
+            android:id="@+id/btn_mas_saldo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Más Saldo"
+            android:backgroundTint="@color/fastlane_background"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            android:padding="12dp"
+            android:elevation="4dp"
+            android:layout_marginStart="8dp"/>
+    </LinearLayout>
+
+    <!-- Contenedor principal de partidos -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:weightSum="3">
+
+        <!-- Botón de navegación izquierda -->
+        <Button
+            android:id="@+id/btn_prev_match"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.2"
+            android:text="←"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:backgroundTint="@color/fastlane_background"
+            android:textColor="@android:color/white"
+            android:elevation="4dp"
+            android:layout_marginEnd="8dp"/>
+
+        <!-- Panel del partido actual -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2.6"
+            android:orientation="vertical"
+            android:background="@drawable/match_panel_background"
+            android:padding="24dp"
+            android:elevation="8dp">
+
+            <TextView
+                android:id="@+id/tv_match_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Cargando partidos..."
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:textColor="@android:color/white"
+                android:layout_marginBottom="20dp"/>
+
+            <!-- Equipos -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="24dp">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:id="@+id/iv_home_logo"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="12dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginStart="8dp"
+                        android:contentDescription="Escudo local"
+                        android:src="@drawable/default_background" />
+
+                    <TextView
+                        android:id="@+id/tv_home_team"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Equipo Local"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:gravity="center"
+                        android:textColor="@android:color/white"
+                        android:background="@drawable/team_button_background"
+                        android:padding="18dp"
+                        android:layout_marginEnd="12dp"
+                        android:clickable="true"
+                        android:focusable="true" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="VS"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:textColor="@android:color/white"
+                    android:layout_marginHorizontal="8dp" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:id="@+id/iv_away_logo"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="12dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginStart="8dp"
+                        android:contentDescription="Escudo visitante"
+                        android:src="@drawable/default_background" />
+
+                    <TextView
+                        android:id="@+id/tv_away_team"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Equipo Visitante"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:gravity="center"
+                        android:textColor="@android:color/white"
+                        android:background="@drawable/team_button_background"
+                        android:padding="18dp"
+                        android:layout_marginStart="12dp"
+                        android:clickable="true"
+                        android:focusable="true" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Odds -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="24dp">
+
+                <TextView
+                    android:id="@+id/tv_home_odds"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Odds: --"
+                    android:textSize="18sp"
+                    android:gravity="center"
+                    android:textColor="#FFD600"
+                    android:layout_marginEnd="8dp"/>
+
+                <TextView
+                    android:id="@+id/tv_away_odds"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Odds: --"
+                    android:textSize="18sp"
+                    android:gravity="center"
+                    android:textColor="#FFD600"
+                    android:layout_marginStart="8dp"/>
+            </LinearLayout>
+
+            <!-- Monto de apuesta -->
+            <TextView
+                android:id="@+id/tv_bet_amount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Monto: $0"
+                android:textSize="20sp"
+                android:gravity="center"
+                android:textColor="#FF6B35"
+                android:layout_marginBottom="18dp"/>
+
+            <!-- Botones de apuesta mejorados -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginBottom="24dp">
+
+                <Button
+                    android:id="@+id/btn_decrease_bet"
+                    android:layout_width="0dp"
+                    android:layout_height="70dp"
+                    android:layout_weight="1"
+                    android:text="-"
+                    android:textSize="32sp"
+                    android:textStyle="bold"
+                    android:backgroundTint="#FFD600"
+                    android:textColor="#222"
+                    android:elevation="4dp"
+                    android:layout_marginEnd="12dp"/>
+
+                <Button
+                    android:id="@+id/btn_who_won"
+                    android:layout_width="0dp"
+                    android:layout_height="70dp"
+                    android:layout_weight="1.5"
+                    android:text="APOSTAR"
+                    android:textAllCaps="true"
+                    android:textSize="28sp"
+                    android:textStyle="bold"
+                    android:backgroundTint="#43A047"
+                    android:textColor="@android:color/white"
+                    android:elevation="8dp"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginEnd="12dp"
+                    android:drawableLeft="@android:drawable/ic_menu_save"
+                    android:drawablePadding="16dp"/>
+
+                <Button
+                    android:id="@+id/btn_increase_bet"
+                    android:layout_width="0dp"
+                    android:layout_height="70dp"
+                    android:layout_weight="1"
+                    android:text="+"
+                    android:textSize="32sp"
+                    android:textStyle="bold"
+                    android:backgroundTint="#FFD600"
+                    android:textColor="#222"
+                    android:elevation="4dp"
+                    android:layout_marginStart="12dp"/>
+            </LinearLayout>
+
+            <!-- Botón de ver partido grande y centrado -->
+            <Button
+                android:id="@+id/btn_watch_match"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:text="VER PARTIDO"
+                android:textAllCaps="true"
+                android:textSize="28sp"
+                android:textStyle="bold"
+                android:backgroundTint="#1976D2"
+                android:textColor="@android:color/white"
+                android:elevation="8dp"
+                android:drawableLeft="@android:drawable/ic_media_play"
+                android:drawablePadding="16dp"
+                android:layout_marginBottom="24dp"/>
+        </LinearLayout>
+
+        <!-- Botón de navegación derecha -->
+        <Button
+            android:id="@+id/btn_next_match"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.2"
+            android:text="→"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:backgroundTint="@color/fastlane_background"
+            android:textColor="@android:color/white"
+            android:elevation="4dp"
+            android:layout_marginStart="8dp"/>
+    </LinearLayout>
+</LinearLayout> 

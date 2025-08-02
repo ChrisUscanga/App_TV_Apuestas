@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="tv_match_title" type="id" />
+    <item name="tv_home_team" type="id" />
+    <item name="tv_away_team" type="id" />
+    <item name="tv_home_odds" type="id" />
+    <item name="tv_away_odds" type="id" />
+    <item name="tv_bet_amount" type="id" />
+    <item name="btn_decrease_bet" type="id" />
+    <item name="btn_increase_bet" type="id" />
+    <item name="btn_who_won" type="id" />
+    <item name="btn_prev_match" type="id" />
+</resources>
